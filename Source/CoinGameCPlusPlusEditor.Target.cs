@@ -9,6 +9,10 @@ public class CoinGameCPlusPlusEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.Add("CoinGameCPlusPlus");
+		ExtraModuleNames.AddRange( new string[] {
+			"CoinGameCPlusPlus",
+			// add extra modules down belos;
+			"CustomAnimNodeEd"
+		});
 	}
 }

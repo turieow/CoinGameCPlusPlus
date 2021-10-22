@@ -9,7 +9,16 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"AnimGraph"
+			]
+		},
+		{
+			"Name": "CustomAnimNodeEd",
+			"Type": "Editor",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"AnimGraph"
 			]
 		}
 	]
