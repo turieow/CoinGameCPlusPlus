@@ -13,5 +13,12 @@ UCLASS()
 class COINGAMECPLUSPLUS_API UMainPlayerAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+public:
+	UMainPlayerAnimInstance();
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Edit")
+	float Speed;
+
+public:
+	virtual void NativeUpdateAnimation(float DeltaTime) override;
 };
