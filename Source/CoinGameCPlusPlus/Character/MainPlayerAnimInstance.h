@@ -16,8 +16,11 @@ class COINGAMECPLUSPLUS_API UMainPlayerAnimInstance : public UAnimInstance
 public:
 	UMainPlayerAnimInstance();
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Edit")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Edit")
 	float Speed;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Edit")
+	bool IsinAir;
 
 public:
 	virtual void NativeUpdateAnimation(float DeltaTime) override;

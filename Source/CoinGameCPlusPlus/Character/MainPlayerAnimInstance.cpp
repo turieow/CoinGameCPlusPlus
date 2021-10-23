@@ -2,6 +2,7 @@
 
 
 #include "CoinGameCPlusPlus\Character/MainPlayerAnimInstance.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 UMainPlayerAnimInstance::UMainPlayerAnimInstance()
 	:Super()
@@ -12,8 +13,12 @@ UMainPlayerAnimInstance::UMainPlayerAnimInstance()
 void UMainPlayerAnimInstance::NativeUpdateAnimation(float DeltaTime)
 {
 	Super::NativeUpdateAnimation(DeltaTime);
-	if (TryGetPawnOwner())
+	APawn* owner = TryGetPawnOwner();
+	if (!owner)
 	{
-		Speed = TryGetPawnOwner()->GetVelocity().Size();
+		return;
 	}	
+
+	Speed = owner->GetVelocity().Size();
+	IsinAir = owner->GetMovementComponent()->IsFalling();
 }
