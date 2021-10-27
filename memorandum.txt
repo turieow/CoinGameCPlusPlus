@@ -5,4 +5,7 @@ https://qiita.com/Rinderon/items/6c5351df66f82d16a6f3
 https://qiita.com/4_mio_11/items/1e56735bcdf49da40ca8
 
 ・アニメーションインスタンスCPPでクラッシュする
-https://answers.unrealengine.com/questions/573495/editor-crashes-after-adding-animations.html
+https://answers.unrealengine.com/questions/573495/editor-crashes-after-adding-animations.html]
+
+・コリジョンのBeginOverlapバインド
+https://bigden.hatenablog.com/entry/2017/11/17/004315
