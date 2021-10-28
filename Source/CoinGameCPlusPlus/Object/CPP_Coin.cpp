@@ -53,8 +53,8 @@ void ACPP_Coin::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor*
 {
 	UE_LOG(LogTemp, Log, TEXT("Overlap"));
 	//AGameModeBase* gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
-	//auto gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
-	/*auto gameModeBase = GetWorld()->GetAuthGameMode<AGameModeBase>();
+	/*auto gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
+	auto gameModeBase = GetWorld()->GetAuthGameMode<AGameModeBase>();
 	ICPP_ItoGameMode::Execute_IAddCoin(gameModeBase, 1);*/
 	Destroy();
 }

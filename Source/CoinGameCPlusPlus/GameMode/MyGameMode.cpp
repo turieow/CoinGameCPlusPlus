@@ -3,6 +3,7 @@
 
 #include "CoinGameCPlusPlus/GameMode/MyGameMode.h"
 #include "CoinGameCPlusPlus\Object/CPP_Coin.h"
+#include "CoinGameCPlusPlus\GameState/MyGameState.h"
 #include "Kismet/GameplayStatics.h"
 
 AMyGameMode::AMyGameMode()
@@ -16,6 +17,16 @@ AMyGameMode::AMyGameMode()
 	if (MainPlayerActor != nullptr)
 	{
 		DefaultPawnClass = MainPlayerActor;
+	}
+
+	// GameStateê›íË
+	FString gameStatePath = "/Script/CoinGameCPlusPlus.MyGameState";
+	ConstructorHelpers::FObjectFinder<UClass> gameStateCPP(*gameStatePath);
+	TSubclassOf<AMyGameState> gameStateObj = gameStateCPP.Object;
+
+	if (gameStateObj != nullptr)
+	{
+		GameStateClass = gameStateObj;
 	}
 }
 
