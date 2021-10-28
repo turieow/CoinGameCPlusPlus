@@ -2,6 +2,8 @@
 
 
 #include "CoinGameCPlusPlus/GameMode/MyGameMode.h"
+#include "CoinGameCPlusPlus\Object/CPP_Coin.h"
+#include "Kismet/GameplayStatics.h"
 
 AMyGameMode::AMyGameMode()
 	:Super()
@@ -15,4 +17,22 @@ AMyGameMode::AMyGameMode()
 	{
 		DefaultPawnClass = MainPlayerActor;
 	}
+}
+
+void AMyGameMode::BeginPlay()
+{
+	TSubclassOf<ACPP_Coin> coinClass = ACPP_Coin::StaticClass();;
+	TArray<AActor*> allCoins;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), coinClass, allCoins);
+	mMaxCoinNum = allCoins.Num();
+}
+
+void AMyGameMode::AddCoin(int addNum)
+{
+	mCurrentCoinNum += addNum;
+}
+
+void AMyGameMode::IAddCoin_Implementation(int addNum)
+{
+	this->AddCoin(addNum);
 }

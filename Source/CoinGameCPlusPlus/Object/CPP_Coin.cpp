@@ -2,6 +2,9 @@
 
 
 #include "CoinGameCPlusPlus\Object/CPP_Coin.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"    
+#include "CoinGameCPlusPlus\Interface/CPP_ItoGameMode.h"
 
 
 // Sets default values
@@ -49,5 +52,10 @@ void ACPP_Coin::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor*
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UE_LOG(LogTemp, Log, TEXT("Overlap"));
+	//AGameModeBase* gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
+	//auto gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
+	/*auto gameModeBase = GetWorld()->GetAuthGameMode<AGameModeBase>();
+	ICPP_ItoGameMode::Execute_IAddCoin(gameModeBase, 1);*/
+	Destroy();
 }
 

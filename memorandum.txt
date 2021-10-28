@@ -9,3 +9,12 @@ https://answers.unrealengine.com/questions/573495/editor-crashes-after-adding-an
 
 ・コリジョンのBeginOverlapバインド
 https://bigden.hatenablog.com/entry/2017/11/17/004315
+
+・レベル上の特定のアクターを取得。数を取得
+https://stackoverflow.com/questions/39406118/why-getallactorsofclass-returns-empty
+
+・Interface実装
+　https://bigden.hatenablog.com/entry/2018/02/15/105952
+　https://qiita.com/unknown_ds/items/bbe94534048ac50fb4b9
+　https://papersloth.hatenablog.com/entry/2018/09/19/195013
+　https://qiita.com/Naotsun/items/5305e1a96fad7f37da57
