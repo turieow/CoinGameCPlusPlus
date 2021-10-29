@@ -4,6 +4,7 @@
 #include "CoinGameCPlusPlus\Object/CPP_Coin.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"    
+#include "GameFramework/GameModeBase.h"
 #include "CoinGameCPlusPlus\Interface/CPP_ItoGameMode.h"
 
 
@@ -52,10 +53,25 @@ void ACPP_Coin::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor*
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UE_LOG(LogTemp, Log, TEXT("Overlap"));
-	//AGameModeBase* gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
-	/*auto gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
-	auto gameModeBase = GetWorld()->GetAuthGameMode<AGameModeBase>();
-	ICPP_ItoGameMode::Execute_IAddCoin(gameModeBase, 1);*/
+	auto gameModeBase = GetWorld()->GetAuthGameMode<AGameModeBase>();	
+	/*auto checkInterface = Cast<ICPP_ItoGameMode>(gameModeBase);
+	checkInterface->Execute_IAddCoin(gameModeBase, 1);*/
+
+	if (gameModeBase->GetClass()->ImplementsInterface(UCPP_ItoGameMode::StaticClass()))
+	{
+		ICPP_ItoGameMode::Execute_IAddCoin(gameModeBase, 1);
+	}
 	Destroy();
 }
 
+
+
+
+
+
+
+
+
+
+//AGameModeBase* gameModeBase = UGameplayStatics::GetGameMode(GetWorld());
+//auto gameModeBase = UGameplayStatics::GetGameMode(GetWorld());

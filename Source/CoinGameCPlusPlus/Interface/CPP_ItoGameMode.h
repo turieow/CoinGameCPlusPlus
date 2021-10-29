@@ -7,7 +7,7 @@
 #include "CPP_ItoGameMode.generated.h"
 
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(Blueprintable)
 class UCPP_ItoGameMode : public UInterface
 {
 	GENERATED_BODY()
@@ -17,7 +17,7 @@ class UCPP_ItoGameMode : public UInterface
 /**
  * 
  */
-class COINGAMECPLUSPLUS_API ICPP_ItoGameMode
+class ICPP_ItoGameMode
 {
 	GENERATED_BODY()
 	//GENERATED_IINTERFACE_BODY()

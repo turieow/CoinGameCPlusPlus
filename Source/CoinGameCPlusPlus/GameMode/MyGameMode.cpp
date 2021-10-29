@@ -46,4 +46,5 @@ void AMyGameMode::AddCoin(int addNum)
 void AMyGameMode::IAddCoin_Implementation(int addNum)
 {
 	this->AddCoin(addNum);
+	UE_LOG(LogTemp, Log, TEXT("%d"), mCurrentCoinNum);
 }
