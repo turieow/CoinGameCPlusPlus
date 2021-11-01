@@ -48,3 +48,13 @@ void AMyGameMode::IAddCoin_Implementation(int addNum)
 	this->AddCoin(addNum);
 	UE_LOG(LogTemp, Log, TEXT("%d"), mCurrentCoinNum);
 }
+
+int AMyGameMode::IGetMaxCoinNum_Implementation()
+{
+	return mMaxCoinNum;
+}
+
+int AMyGameMode::IGetCoinNum_Implementation()
+{
+	return mCurrentCoinNum;
+}

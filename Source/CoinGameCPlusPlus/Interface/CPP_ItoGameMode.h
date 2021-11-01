@@ -26,4 +26,10 @@ class ICPP_ItoGameMode
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void IAddCoin(int addCoin);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	int IGetMaxCoinNum();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	int IGetCoinNum();
 };

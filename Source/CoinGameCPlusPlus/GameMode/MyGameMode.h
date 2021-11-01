@@ -34,4 +34,6 @@ public:
 	// interface function
 public:
 	virtual void IAddCoin_Implementation(int addCoin) override;
+	virtual int IGetMaxCoinNum_Implementation() override;
+	virtual int IGetCoinNum_Implementation() override;
 };
