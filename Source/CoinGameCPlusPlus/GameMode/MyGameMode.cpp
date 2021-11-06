@@ -28,6 +28,16 @@ AMyGameMode::AMyGameMode()
 	{
 		GameStateClass = gameStateObj;
 	}
+
+	// PlayerControllerê›íË
+	FString playerControllerPath = "/Script/CoinGameCPlusPlus.CPP_PlayerController";
+	ConstructorHelpers::FObjectFinder<UClass> playerControllerCPP(*playerControllerPath);
+	TSubclassOf<APlayerController> playercontrollerObj = playerControllerCPP.Object;
+
+	if (playercontrollerObj != nullptr)
+	{
+		PlayerControllerClass = playercontrollerObj;
+	}
 }
 
 void AMyGameMode::BeginPlay()
@@ -41,12 +51,16 @@ void AMyGameMode::BeginPlay()
 void AMyGameMode::AddCoin(int addNum)
 {
 	mCurrentCoinNum += addNum;
+
+	if (mCurrentCoinNum >= mMaxCoinNum)
+	{
+
+	}
 }
 
 void AMyGameMode::IAddCoin_Implementation(int addNum)
 {
 	this->AddCoin(addNum);
-	UE_LOG(LogTemp, Log, TEXT("%d"), mCurrentCoinNum);
 }
 
 int AMyGameMode::IGetMaxCoinNum_Implementation()

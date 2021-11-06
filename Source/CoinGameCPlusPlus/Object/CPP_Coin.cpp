@@ -2,7 +2,6 @@
 
 
 #include "CoinGameCPlusPlus\Object/CPP_Coin.h"
-#include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"    
 #include "GameFramework/GameModeBase.h"
 #include "CoinGameCPlusPlus\Interface/CPP_ItoGameMode.h"
